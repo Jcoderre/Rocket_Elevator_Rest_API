@@ -8,7 +8,8 @@ namespace RocketElevatorsAPI.Models
     [Table("interventions")]
     public class Intervention
     {
-
+        // Fields
+        private string status;
 
         // Properties
         [Key]
@@ -27,7 +28,18 @@ namespace RocketElevatorsAPI.Models
         public string Report { get; set; }
 
         [Column("status")]
-        public string Status { get; set; }
+        public string Status 
+        {
+            get { return status; }
+            set 
+            {
+                if (value.ToLower() != "complete" && value.ToLower() != "interrupted" && value.ToLower() != "pending")
+                {
+                    throw new System.Exception("Status given for intervention with ID " + this.Id + " is invalid. Please change it.");
+                }
+                status = value;
+            }
+        }
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; }

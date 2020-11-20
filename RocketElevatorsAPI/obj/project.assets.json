@@ -9489,11 +9489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\API_REST\\Rocket_Elevators_REST\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
       "projectName": "RocketElevatorsAPI",
-      "projectPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\API_REST\\Rocket_Elevators_REST\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
+      "projectPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
       "packagesPath": "C:\\Users\\Joey\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\API_REST\\Rocket_Elevators_REST\\RocketElevatorsAPI\\obj\\",
+      "outputPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Joey\\AppData\\Roaming\\NuGet\\NuGet.Config",
