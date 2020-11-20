@@ -22,8 +22,9 @@ namespace RocketElevatorsAPI.Controllers
 
         }
 
-        // Get full list of interventions                                    
-         
+        // Get full list of interventions 
+        // http://localhost:5000/api/intervention/all
+        // GET: api/intervention/all                                    
         [HttpGet("all")]
         public IEnumerable<Intervention> GetInterventions()
         {
@@ -34,18 +35,21 @@ namespace RocketElevatorsAPI.Controllers
 
         }
 
-
-
+        // REQUIREMENT #1
         // Retriving Status of All the interventions: pending             
-        // https://localhost:5000/api/intervention/pending
+        // https://localhost:5000/api/intervention/ispending
         // GET: api/intervention/inpending         
 
-        [HttpGet("pending")]
-        public IEnumerable<Intervention> GetpendingInterventions()
+        [HttpGet("ispending")]
+        public IEnumerable<Intervention> GetIspendingInterventions()
         {
             IQueryable<Intervention> interventions = 
             from intervention in _context.Interventions
-            where intervention.Status.ToLower() != "complete" // Gets Interventions with "Pending" status
+            where intervention.InterventionStart == null            // Gets all intervention with no date
+            where intervention.Status.ToLower() != "interrupted"    // Gets Interventions with "Pending" status
+            where intervention.Status.ToLower() != "complete"
+            where intervention.Status.ToLower() != "incomplete"
+            where intervention.Status.ToLower() != null
             select intervention;
             return interventions.ToList();
         }
@@ -58,7 +62,7 @@ namespace RocketElevatorsAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutInterventionStart(ulong id, [FromBody] Intervention intervention)
         {
-            if (id != intervention.Id)
+            if (id != intervention.id)
             {
                 return BadRequest();
             }
@@ -66,12 +70,12 @@ namespace RocketElevatorsAPI.Controllers
             _context.Entry(intervention).State = EntityState.Modified;
 
             // Columns that we don't want to change
-            _context.Entry(intervention).Property(p => p.Id).IsModified                     = false;
+            _context.Entry(intervention).Property(p => p.id).IsModified                     = false;
             _context.Entry(intervention).Property(p => p.Result).IsModified                 = false;
             _context.Entry(intervention).Property(p => p.Report).IsModified                 = false;
-            _context.Entry(intervention).Property(p => p.Status).IsModified                 = false;
-            _context.Entry(intervention).Property(p => p.Elevator_Id).IsModified            = false;
+            _context.Entry(intervention).Property(p => p.Elevator_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Author).IsModified                 = false;
+            _context.Entry(intervention).Property(p => p.InterventionStop).IsModified       = false;
             _context.Entry(intervention).Property(p => p.Customer_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Building_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Column_id).IsModified              = false;
@@ -86,7 +90,7 @@ namespace RocketElevatorsAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (id != intervention.Id)
+                if (id != intervention.id)
                 {
                     // Resource doesn't exist.
                     return NotFound();
@@ -97,8 +101,8 @@ namespace RocketElevatorsAPI.Controllers
                 }
             }
            
-            var dbIntervention = _context.Interventions.FirstOrDefault(intervention => intervention.Id == id);          
-            return  Content("Status of the Intervention with ID #" + intervention.Id + ": changed Start of intervention to " + intervention.InterventionStart); 
+            var dbIntervention = _context.Interventions.FirstOrDefault(intervention => intervention.id == id);          
+            return  Content("Status of the Intervention with ID #" + intervention.id + " as changed. The intervention start at :" + intervention.InterventionStart + " and is status is now: " + intervention.Status); 
         }
         
     }

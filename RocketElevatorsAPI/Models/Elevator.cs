@@ -28,7 +28,7 @@ namespace RocketElevatorsAPI.Models
             get { return status; }
             set 
             {
-                if (value.ToLower() != "active" && value.ToLower() != "inactive" && value.ToLower() != "intervention")
+                if   (value.ToLower() != "active" && value.ToLower() != "inactive" && value.ToLower() != "intervention")
                 {
                     throw new System.Exception("Status given for elevator with ID " + this.Id + " is invalid. Please change it.");
                 }

@@ -9,13 +9,10 @@ A REST API
 
 In order to connect our information system to the equipment in operation throughout the territory served, we first need to develop a REST API using C # and .ASP NET. It will allow us to know and to manipulate the status of all the relevant entities of the operational database.
 
->  To retrieve the status of a specific battery, column or elevator, use GET with one of the following  endpoints:
+>  To retrieve the information of all intervention without date of starting intervention and with the status "Pending":
 
-  `/api/battery/{battery_id}`
-  `/api/column/{column_id}`
-  `/api/elevator/{elevator_id}`
-    
-    
+  `api/intervention/ispending`
+
   > To change the status of a specific battery, column or elevator, use PUT with the following endpoints:
   
   `/api/battery/{battery_id}`

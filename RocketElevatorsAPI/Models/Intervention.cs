@@ -4,22 +4,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RocketElevatorsAPI.Models
 {
-
     [Table("interventions")]
     public class Intervention
     {
+        
         // Fields
         private string status;
 
         // Properties
         [Key]
-        public ulong Id { get; set; }
+        public ulong id { get; set; }
 
         [Column("intervention_start")]
-        public DateTime InterventionStart { get; set; }
+        public DateTime? InterventionStart { get; set; }
 
         [Column("intervention_stop")]
-        public DateTime InterventionStop { get; set; }
+        public DateTime? InterventionStop { get; set; }
 
         [Column("result")]
         public string Result { get; set; }
@@ -33,9 +33,9 @@ namespace RocketElevatorsAPI.Models
             get { return status; }
             set 
             {
-                if (value.ToLower() != "complete" && value.ToLower() != "interrupted" && value.ToLower() != "pending")
+                if (value.ToLower() != "complete" && value.ToLower() != "interrupted" && value.ToLower() != "pending" && value.ToLower() != "incomplete")
                 {
-                    throw new System.Exception("Status given for intervention with ID " + this.Id + " is invalid. Please change it.");
+                    throw new System.Exception("Status given for intervention with ID " + this.id + " is invalid. Please change it.");
                 }
                 status = value;
             }
@@ -47,26 +47,28 @@ namespace RocketElevatorsAPI.Models
         [Column("updated_at")]
         public DateTime UpdatedAt { get; set; }
 
+        
+        [ForeignKey("elevator_id")]
+        public ulong? Elevator_id { get; set; }
+
         [Column("author")]
-        public int Author { get; set; }
+        public int? Author { get; set; }
 
         [Column("customer_id")]
-        public int Customer_id { get; set; }
+        public int? Customer_id { get; set; }
 
         [Column("building_id")]
-        public int Building_id { get; set; }
+        public int? Building_id { get; set; }
 
         [Column("column_id")]
-        public int Column_id { get; set; }
+        public int? Column_id { get; set; }
 
         [Column("employee_id")]
-        public int Employee_id { get; set; }
+        public int? Employee_id { get; set; }
 
         [Column("battery_id")]
-        public int Battery_id { get; set; }
+        public int? Battery_id { get; set; }
 
-        [ForeignKey("elevator_id")]
-        public ulong Elevator_Id { get; set; }
 
     }
 }
