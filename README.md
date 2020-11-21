@@ -8,11 +8,11 @@ This repo contains all the code for the RESTful API in .NET Core from Week 9 of 
 A REST API
 
 
->  To retrieve the information of all intervention without date of starting intervention and with the status "Pending":
+ To retrieve the information of all intervention without date of starting intervention and with the status "Pending":
 
   `api/intervention/ispending`
 
-  > To change the status of a specific Intervention to ("InProgress or Complete"), and change the date:
+To change the status of a specific Intervention to ("InProgress or Complete"), and change the date:
   
 
   In Postman, in the Body section, you have to use raw JSON and give a value for the corresponding ID and the desired status. 
@@ -22,4 +22,4 @@ A REST API
 ## Made By
 
 
-> Joey Coderre "Member"​
+> Joey Coderre
