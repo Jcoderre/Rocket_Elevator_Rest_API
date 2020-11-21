@@ -16,11 +16,15 @@ To change the status of a specific Intervention to ("InProgress or Complete"), a
 
   `api/interventions/{id}`
 
-    {
+  {
     "id":1,
     "status":"inProgress"
   }
   
+  {
+    "id":1,
+    "status":"Complete"
+  }
 
   In Postman, in the Body section, you have to use raw JSON and give a value for the corresponding ID and the desired status. 
   
