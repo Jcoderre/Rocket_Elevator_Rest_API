@@ -13,6 +13,7 @@ namespace RocketElevatorsAPI.Controllers
     [ApiController]
     public class ElevatorController : ControllerBase
     {
+
         // Context
         private readonly RocketElevatorsContext _context;
 

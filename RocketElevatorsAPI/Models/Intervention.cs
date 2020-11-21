@@ -16,10 +16,10 @@ namespace RocketElevatorsAPI.Models
         public ulong id { get; set; }
 
         [Column("intervention_start")]
-        public DateTime? InterventionStart { get; set; }
+        public DateTime InterventionStart { get; set; }
 
         [Column("intervention_stop")]
-        public DateTime? InterventionStop { get; set; }
+        public DateTime InterventionStop { get; set; }
 
         [Column("result")]
         public string Result { get; set; }
@@ -33,7 +33,7 @@ namespace RocketElevatorsAPI.Models
             get { return status; }
             set 
             {
-                if (value.ToLower() != "complete" && value.ToLower() != "interrupted" && value.ToLower() != "pending" && value.ToLower() != "incomplete")
+                if (value.ToLower() != "complete" && value.ToLower() != "interrupted" && value.ToLower() != "pending" && value.ToLower() != "incomplete" && value.ToLower() != "inprogress")
                 {
                     throw new System.Exception("Status given for intervention with ID " + this.id + " is invalid. Please change it.");
                 }

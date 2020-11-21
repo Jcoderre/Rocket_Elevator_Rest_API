@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RocketElevatorsAPI.Models;
 using RocketElevatorsAPI.Data;
+using System.Globalization;
+
 
 namespace RocketElevatorsAPI.Controllers
 {
@@ -19,7 +21,6 @@ namespace RocketElevatorsAPI.Controllers
         public InterventionController(RocketElevatorsContext context)
         {
             _context = context;
-
         }
 
         // Get full list of interventions 
@@ -34,7 +35,6 @@ namespace RocketElevatorsAPI.Controllers
             return interventions.ToList();
 
         }
-
         // REQUIREMENT #1
         // Retriving Status of All the interventions: pending             
         // https://localhost:5000/api/intervention/ispending
@@ -56,11 +56,12 @@ namespace RocketElevatorsAPI.Controllers
 
 
 
+
         // Change status of specific intervention
         // http://localhost:5000/api/intervention/{id}
         // PUT api/interventions/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutInterventionStart(ulong id, [FromBody] Intervention intervention)
+        public async Task<IActionResult> PutChangeIntervention(ulong id, [FromBody] Intervention intervention)
         {
             if (id != intervention.id)
             {
@@ -75,7 +76,6 @@ namespace RocketElevatorsAPI.Controllers
             _context.Entry(intervention).Property(p => p.Report).IsModified                 = false;
             _context.Entry(intervention).Property(p => p.Elevator_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Author).IsModified                 = false;
-            _context.Entry(intervention).Property(p => p.InterventionStop).IsModified       = false;
             _context.Entry(intervention).Property(p => p.Customer_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Building_id).IsModified            = false;
             _context.Entry(intervention).Property(p => p.Column_id).IsModified              = false;
@@ -83,6 +83,7 @@ namespace RocketElevatorsAPI.Controllers
             _context.Entry(intervention).Property(p => p.Battery_id).IsModified             = false;
             _context.Entry(intervention).Property(p => p.CreatedAt).IsModified              = false;
             _context.Entry(intervention).Property(p => p.UpdatedAt).IsModified              = false;
+
 
             try
             {
@@ -102,7 +103,7 @@ namespace RocketElevatorsAPI.Controllers
             }
            
             var dbIntervention = _context.Interventions.FirstOrDefault(intervention => intervention.id == id);          
-            return  Content("Status of the Intervention with ID #" + intervention.id + " as changed. The intervention start at :" + intervention.InterventionStart + " and is status is now: " + intervention.Status); 
+            return  Content("Status of the Intervention with ID #" + intervention.id + " as changed. The intervention start at :" + intervention.InterventionStart + " and end at: " + intervention.InterventionStop  + ". Is status is now: " + intervention.Status); 
         }
         
     }
