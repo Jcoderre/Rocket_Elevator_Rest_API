@@ -12,12 +12,9 @@ A REST API
 
   `api/intervention/ispending`
 
-  > To change the status of a specific battery, column or elevator, use PUT with the following endpoints:
+  > To change the status of a specific Intervention to ("InProgress or Complete"), and change the date:
   
-  `/api/battery/{battery_id}`
-  `/api/column/{column_id}`
-  `/api/elevator/{elevator_id}`
-  
+
   In Postman, in the Body section, you have to use raw JSON and give a value for the corresponding ID and the desired status. 
   
 
