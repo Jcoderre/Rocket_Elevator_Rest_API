@@ -13,6 +13,13 @@ A REST API
   `api/intervention/ispending`
 
 To change the status of a specific Intervention to ("InProgress or Complete"), and change the date:
+
+  `api/interventions/{id}`
+
+    {
+    "id":1,
+    "status":"inProgress"
+  }
   
 
   In Postman, in the Body section, you have to use raw JSON and give a value for the corresponding ID and the desired status. 
