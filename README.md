@@ -19,12 +19,7 @@ A REST API
   
 
 
-## TEAM MEMBERS
+## Made By
 
-> Fabien Dimitrov "Team Leader"
-> 
-> Louis-David Marmen "Member"
-> 
-> William Jacques "Member"
-> 
+
 > Joey Coderre "Member"​
