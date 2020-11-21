@@ -46,7 +46,7 @@ namespace RocketElevatorsAPI.Models
 
         [Column("updated_at")]
         public DateTime UpdatedAt { get; set; }
-
+                
         
         [ForeignKey("elevator_id")]
         public ulong? Elevator_id { get; set; }

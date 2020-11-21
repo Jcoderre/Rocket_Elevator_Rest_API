@@ -10,6 +10,7 @@ using System.Globalization;
 
 
 
+
 namespace RocketElevatorsAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -105,6 +106,10 @@ namespace RocketElevatorsAPI.Controllers
 
            
             var dbIntervention = _context.Interventions.FirstOrDefault(intervention => intervention.id == id);
+
+            //dbIntervention.Status = "inProgress"
+            //dbIntervention.InterventionStart = 
+            //dbIntervention.InterventionStop = 
 
             return  Content("Status of the Intervention with ID #" + intervention.id + " as changed. The intervention start at :" + intervention.InterventionStart + " and end at: " + intervention.InterventionStop  + ". Is status is now: " + intervention.Status); 
         }
