@@ -58,7 +58,7 @@ namespace RocketElevatorsAPI
                 
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello! Why don't you try out a few of our GET or PUT requests? An example: /api/elevator/all");
+                    await context.Response.WriteAsync("Hello! Why don't you try out a few of our GET or PUT requests? An example: api/intervention/ispending");
                 });
                 endpoints.MapControllers();
             });
