@@ -5,6 +5,9 @@ This repo contains all the code for the RESTful API in .NET Core from Week 9 of 
 
 - The URL for this API deployed on Azure is : 
 
+https://rocket-elevator-restapi.azurewebsites.net
+
+
 A REST API
 
 
