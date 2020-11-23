@@ -103,11 +103,9 @@ namespace RocketElevatorsAPI.Controllers
                     throw;
                 }
             }
-
            
             var dbIntervention = _context.Interventions.FirstOrDefault(intervention => intervention.id == id);
-
-            //dbIntervention.Status = "inProgress"
+            dbIntervention.Status = "inProgress";
             //dbIntervention.InterventionStart = 
             //dbIntervention.InterventionStop = 
 

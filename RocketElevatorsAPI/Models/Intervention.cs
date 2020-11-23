@@ -1,12 +1,16 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace RocketElevatorsAPI.Models
 {
     [Table("interventions")]
     public class Intervention
-    {
+    {   
+
+        public static DateTime Now { get; }
+        DateTime localDate = DateTime.Now;
         
         // Fields
         private string status;
