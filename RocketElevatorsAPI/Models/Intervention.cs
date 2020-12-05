@@ -10,7 +10,7 @@ namespace RocketElevatorsAPI.Models
     {   
 
         public static DateTime Now { get; }
-        DateTime localDate = DateTime.Now;
+        DateTime? localDate = DateTime.Now;
         
         // Fields
         private string status;
@@ -20,10 +20,10 @@ namespace RocketElevatorsAPI.Models
         public ulong id { get; set; }
 
         [Column("intervention_start")]
-        public DateTime InterventionStart { get; set; }
+        public DateTime? InterventionStart { get; set; }
 
         [Column("intervention_stop")]
-        public DateTime InterventionStop { get; set; }
+        public DateTime? InterventionStop { get; set; }
 
         [Column("result")]
         public string Result { get; set; }
@@ -46,10 +46,10 @@ namespace RocketElevatorsAPI.Models
         }
 
         [Column("created_at")]
-        public DateTime CreatedAt { get; set; }
+        public DateTime? CreatedAt { get; set; }
 
         [Column("updated_at")]
-        public DateTime UpdatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
                 
         
         [ForeignKey("elevator_id")]
