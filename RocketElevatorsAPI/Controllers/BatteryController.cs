@@ -36,9 +36,36 @@ namespace RocketElevatorsAPI.Controllers {
 
         }
 
+
         // Get status of specific battery
-        // http://localhost:5000/api/batteries/{id}
-        // GET: api/batteries/{id}
+        // http://localhost:5000/api/battery/{id}
+        // GET: api/battery/{id}
+        [HttpGet("status")]
+        public string GetStatusAll(ulong id)
+        {
+            var batteries = _context.Batteries.Where(battery => battery.Id == id).ToList();
+            return batteries[0].Status;
+        }
+
+                // REQUIREMENT #1
+        // Retriving Status of All the interventions: pending             
+        // https://localhost:5000/api/intervention/ispending
+        // GET: api/intervention/inpending         
+
+        [HttpGet("statusInactive")]
+        public IEnumerable<Battery> GetStatusInactive()
+        {
+            IQueryable<Battery> batteries = 
+            from battery in _context.Batteries
+            where battery.Status.ToLower() != "Active"    // Gets Batteries with "Inactive" status
+            where battery.Status.ToLower() != null
+            select battery;
+            return batteries.ToList();
+        }
+
+        // Get status of specific battery
+        // http://localhost:5000/api/battery/{id}
+        // GET: api/battery/{id}
         [HttpGet("{id}")]
         public string GetStatus(ulong id)
         {

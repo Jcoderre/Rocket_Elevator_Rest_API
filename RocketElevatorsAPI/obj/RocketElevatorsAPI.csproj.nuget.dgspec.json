@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj": {}
+    "c:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj": {
+    "c:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
+        "projectUniqueName": "c:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
         "projectName": "RocketElevatorsAPI",
-        "projectPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
+        "projectPath": "c:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\RocketElevatorsAPI.csproj",
         "packagesPath": "C:\\Users\\Joey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\obj\\",
+        "outputPath": "c:\\Users\\Joey\\Desktop\\Codeboxx\\week9\\REST_API\\Rocket_Elevator_Rest_API\\RocketElevatorsAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Joey\\AppData\\Roaming\\NuGet\\NuGet.Config",
