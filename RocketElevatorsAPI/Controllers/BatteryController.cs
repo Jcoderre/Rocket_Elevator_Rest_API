@@ -47,10 +47,10 @@ namespace RocketElevatorsAPI.Controllers {
             return batteries[0].Status;
         }
 
-                // REQUIREMENT #1
-        // Retriving Status of All the interventions: pending             
-        // https://localhost:5000/api/intervention/ispending
-        // GET: api/intervention/inpending         
+
+        // Retriving Status of All the battery: Inactive             
+        // https://localhost:5000/api/battery/statusInactive
+        // GET: api/battery/statusInactive         
 
         [HttpGet("statusInactive")]
         public IEnumerable<Battery> GetStatusInactive()
