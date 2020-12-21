@@ -16,5 +16,6 @@ namespace RocketElevatorsAPI.Data
         public DbSet<Customer> Customers { get; set; }
         public DbSet<BuildingDetail> BuildingDetails { get; set; }
         public DbSet<Intervention> Interventions { get; set; }
+        public DbSet<Employee> Employees { get; set;}
     }
 }
