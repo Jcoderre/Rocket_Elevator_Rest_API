@@ -35,5 +35,23 @@ namespace RocketElevatorsAPI.Controllers
             return employees.ToList();
 
         }
+
+        // https://localhost:5000/api/employee/find/{email}
+        // GET: api/employee/find/{email}
+        [HttpGet("find/{email}")]        
+        public ActionResult<Employee> GetEmployeeEmail(string email) 
+        {
+            var decodedEmail = System.Web.HttpUtility.UrlDecode(email);            
+            //Console.WriteLine(decodedEmail);            
+            var employeeEmail = _context.Employees            
+            .Where(e => e.employeeEmail == decodedEmail);            
+            //.FirstOrDefaultAsync();            
+            if (employeeEmail == null) {                
+                return NotFound();            
+            }            
+            return Ok(employeeEmail);        
+        }
+
+
     }
 }
